@@ -15,7 +15,8 @@ class Empleado
             return $empleados;
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al obtener lista de empleados. '.$e->getMessage().'</span>';
+            return [];
         }
     }
 
@@ -33,7 +34,7 @@ class Empleado
             $consulta_empleado = null;
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al registrar los datos de empleado. '.$e->getMessage().'</span>';
         }
     }
 
@@ -50,7 +51,7 @@ class Empleado
             $pdo = null;
             $consulta_empleado = null;
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al actualizar datos de empleado. '.$e->getMessage()-'</span>';
         }
     }
 
@@ -65,7 +66,7 @@ class Empleado
             $pdo = null;
             $consulta_empleado = null;
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al eliminar empleado. '.$e->getMessage().'</span>';
         }
     }
 
@@ -99,7 +100,8 @@ class Empleado
             return $respuesta;
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al editar empleado. '.$e->getMessage().'</span>';
+            return [];
         }
     }
 

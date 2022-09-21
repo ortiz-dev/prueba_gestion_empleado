@@ -11,7 +11,8 @@ class Rol
             return $roles;
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al obtener los roles. '.$e->getMessage().'</span>';
+            return [];
         }
     }
 

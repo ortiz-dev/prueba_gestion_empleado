@@ -6,8 +6,8 @@
             $empleado = [];
             $empleado_rol = [];
         }
-        $areas = $respuesta['areas']; 
-        $roles = $respuesta['roles']; 
+        $areas = isset($respuesta['areas']) ? $respuesta['areas'] : []; 
+        $roles = isset($respuesta['roles']) ? $respuesta['roles'] : []; 
     ?>
     <h3>
         <?php echo isset($empleado['id']) ? 'Modificar Empleado' : 'Crear Empleado'; ?>

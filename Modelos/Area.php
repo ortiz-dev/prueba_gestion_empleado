@@ -11,7 +11,7 @@ class Area{
             return $areas;
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al obtener las areas.'.$e->getMessage().'</span>';
         }
     }
 }

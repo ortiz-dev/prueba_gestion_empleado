@@ -13,7 +13,8 @@ class EmpleadoRol
             return $roles_empleado->fetchAll(PDO::FETCH_ASSOC);
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al obtener roles del empleado. '.$e->getMessage().'</span>';
+            return [];
         }
     }
 
@@ -29,7 +30,7 @@ class EmpleadoRol
             }
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al agregar roles durante registro. '.$e->getMessage().'</span>';
         }
     }
 
@@ -45,7 +46,7 @@ class EmpleadoRol
             }
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al actualizar roles del empleado. '.$e->getMessage().'</span>';
         }
     }
 
@@ -61,7 +62,7 @@ class EmpleadoRol
         
 
         }catch(PDOException $e){
-            return $e->getMessage();
+            echo '<span class="alert-danger">Error al eliminar roles del empleado. '.$e->getMessage().'</span>';
         }
     }
 
